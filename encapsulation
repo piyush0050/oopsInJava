@@ -1,0 +1,44 @@
+class DVD {
+    private String movieName;
+    private int price;
+    int dvdSize;
+
+    public int getPrice() {
+        return price;
+    }
+
+    public String getMovieName() {
+        return movieName;
+    }
+
+    public void setMovieName(String mName, int passcode) {
+        if(passcode == 12346) {
+            movieName = mName;
+        }
+    }
+
+    public void setPrice(int p, int passcode) {
+        if(passcode == 12346) {
+            price = p;
+        }
+    }
+}
+
+public class encapsulation {
+    public static void main(String[] args) {
+        DVD got = new DVD();
+        got.setMovieName("Game of Thrones", 12346);
+        got.setPrice(500, 12346);
+        got.dvdSize = 8; //8GB
+
+        DVD ironMan = new DVD();
+        ironMan.setMovieName("Iron man", 12346);
+        ironMan.setPrice(600, 12346);
+        ironMan.dvdSize = 16;
+
+        //Nithin is doing below
+        got.setPrice(10, 987654);
+        ironMan.setMovieName("Flop Movie", 987654);
+        System.out.println("GOT DVD cost is " + got.getPrice());
+    }
+}
