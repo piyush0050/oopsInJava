@@ -1,0 +1,28 @@
+interface Shape {
+    void drawShape();
+    double perimeter();
+    double area();
+}
+
+class Rectangle implements Shape {
+    double length;
+    double breadth;
+
+    public void drawShape() {
+        System.out.println("Drawing rectangle");
+    }
+
+    public double perimeter() {
+        return 2*(length + breadth);
+    }
+
+    public double area() {
+        return length*breadth;
+    }
+}
+
+public class AbstractionTutorial {
+    public static void main(String[] args) {
+
+    }
+}
