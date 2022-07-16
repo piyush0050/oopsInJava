@@ -1,0 +1,32 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class ExceptionHandling {
+    public static void main(String[] args) {
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter the value of a ");
+            int a = sc.nextInt();
+            System.out.println("Enter the value of b ");
+            int b = sc.nextInt();
+            int ans = a/b;
+            System.out.println("Division of two numbers is " + ans);
+
+            int[] arr = new int[5]; //it will throw an exception
+            arr[10] = 8;            //it will throw an exception
+        }
+        catch(ArithmeticException e) {
+            System.out.println(e);
+            System.out.println("Arithmetic exception occurred and division by 0 is not possible");
+        }
+        catch(InputMismatchException e) {
+            System.out.println("Input is not proper");
+        }
+        catch(Exception e) {
+            // This can catch all types of exceptions
+            System.out.println("Some error occurred");
+        }
+
+        System.out.println("Code got completed");
+    }
+}
